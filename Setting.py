@@ -1,0 +1,29 @@
+class Setting:
+    def __init__(self):
+        self.HOSTPORT = '10.168.1.124'  # This PC port IP
+        self.buildoption_type = 'Intel(R) Xeon(R) D-2177NT CPU @ 1.90GHz'
+        self.logname = 'ft_test_log.txt'
+        self.ETHPORT = 'enp3s0'  # BBU Ethernet port name
+        self.hostname = '10.168.1.213'  # BBU USB port IP
+        self.IPMIPORT = '10.168.1.214'  # BBU IPMI port IP
+        self.DEFGW = '10.168.1.1'
+        self.ETHPORT_IP = '10.168.1.215'  # BBU ETH port IP
+        self.port = 22
+        self.username = 'root'  # BBU login user
+        self.password = '1'  # BBU login password
+        self.SFPPORT1 = 'enp184s0f0'  # BBU SFP port1 name
+        self.SFPPORT2 = 'enp184s0f1'  # BBU SFP port2 name
+        self.SFPPORT3 = 'enp184s0f2'  # BBU SFP port3 name
+        self.SFPPORT4 = 'enp184s0f3'  # BBU SFP port4 name
+        self.mysql_host = 'localhost'
+        self.mysql_user = 'root'
+        self.mysql_password = 'joinus123'
+        self.mysql_database = 'ftdb'
+        self.BMD = '2021-11-03'  # mfgDate
+        self.BMT = '11:11:11'  # mfgTime
+        # BSN = '1234567899876'  # Board Serial number
+        self.BPN = '0206-00003-0005'  # Board Part number
+        # PSN = '1234567899876'  # Product Serial number
+        self.PPN = '0211-00001-0000'  # Product Part number
+        self.ProductN = 'BBU'  # Product Name
+        self.ProductV = 'Rev-1'  # Product Version
