@@ -1,5 +1,6 @@
 import paramiko
 
+
 class CPU_test:
     def __init__(self, logname, buildoption_type, hostname, port, username, password):
         self.logname = logname

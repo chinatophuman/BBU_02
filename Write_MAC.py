@@ -1,6 +1,7 @@
 import paramiko
 import re
 
+
 class write_Mac:
     def __init__(self, logname, hostname, port, username, password, mac_address):
         self.logname = logname
@@ -41,7 +42,6 @@ class write_Mac:
         i = 0
         j = 0
 
-
         # 获取现有MAC地址
         stdin, stdout, stderr = ssh.exec_command("projects/bbu_server01/LAN_BBU/eeupdate64e /ALL /MAC_DUMP | grep MAC")
         mac_info = stdout.read().decode()
@@ -50,7 +50,7 @@ class write_Mac:
         # print("MAC info before write is:\r %s" % mac_info)
 
         # 依次写入MAC地址
-        while (i < 5):
+        while i < 5:
             stdin, stdout, stderr = ssh.exec_command(
                 "/root/projects/bbu_server01/LAN_BBU/eeupdate64e /NIC=%d /MAC=%s " % (i + 1, self.mac_address[i]))
             write_info = stdout.read().decode()
@@ -60,7 +60,7 @@ class write_Mac:
             i += 1
 
         # 获取写入后的MAC地址
-        while (j < 5):
+        while j < 5:
             stdin2, stdout, stderr2 = ssh.exec_command(
                 "/root/projects/bbu_server01/LAN_BBU/eeupdate64e /NIC=%d /MAC_DUMP | grep MAC" % (j + 1))
             mac_info_later = stdout.read().decode().strip()
@@ -73,7 +73,6 @@ class write_Mac:
             # print('Get MAC number %d is: %s' % (j + 1, MAC_number[j]))
             j += 1
 
-
         # 获取现有BMC MAC地址
         stdin3, stdout, stderr3 = ssh.exec_command("ipmitool i2c bus=0 0xa0 0x06 0x1c 0x00")
         mac_info_ipmi_lan1 = stdout.read().decode().strip()
@@ -85,7 +84,6 @@ class write_Mac:
         # print("BMC LAN8 initial MAC address is: %s" % mac_info_ipmi_lan8)
         with open(self.logname, 'a+') as f:
             f.write("BMC LAN8 initial MAC address is:\r %s\r" % mac_info_ipmi_lan8)
-
 
         # 依次写入BMC MAC地址
         stdin5, stdout, stderr5 = ssh.exec_command(

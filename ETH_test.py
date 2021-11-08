@@ -30,7 +30,6 @@ class ETH_test:
         fail_cnt = 0
         cnt = 0
 
-
         # os.system("ifconfig '%s' 192.168.217.131/24 up"%(ETHPORT))
         stdin, stdout, stderr = ssh.exec_command("ethtool %s" % self.ETHPORT)
         ethinfo = stdout.read()
@@ -58,7 +57,6 @@ class ETH_test:
         elif self.IPMIPORT not in IPMI_Info:
             with open(self.logname, 'a+') as f:
                 f.write("ETH Test fail, IPMI info check failed, error code 05003\r")
-
 
         else:
             while cnt< 3:

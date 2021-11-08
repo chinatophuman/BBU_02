@@ -43,19 +43,19 @@ class SFP_test:
         with open(self.logname, 'a+') as f:
             f.write("\r\rSFP port4 info is: \r  '%s'\r" % SFPPORT4_info.decode())
 
-        if (not('Speed: 10000Mb/s'.encode() in SFPPORT1_info) or not('Link detected: yes'.encode() in SFPPORT1_info)):
+        if 'Speed: 10000Mb/s'.encode() not in SFPPORT1_info or 'Link detected: yes'.encode() not in SFPPORT1_info:
             # print('SFP port1 Test fail, speed detect failed, error code 21001')
             with open(self.logname, 'a+') as f:
                 f.write("SFP port1 Test fail, speed detect failed, error code 21001\r")
-        elif (not('Speed: 10000Mb/s'.encode() in SFPPORT2_info) or not('Link detected: yes'.encode() in SFPPORT2_info)):
+        elif 'Speed: 10000Mb/s'.encode() not in SFPPORT2_info or 'Link detected: yes'.encode() not in SFPPORT2_info:
             # print('SFP port2 Test fail, speed detect failed, error code 21002')
             with open(self.logname, 'a+') as f:
                 f.write("SFP port2 Test fail, speed detect failed, error code 21002\r")
-        elif (not('Speed: 10000Mb/s'.encode() in SFPPORT3_info) or not('Link detected: yes'.encode() in SFPPORT3_info)):
+        elif 'Speed: 10000Mb/s'.encode() not in SFPPORT3_info or 'Link detected: yes'.encode() not in SFPPORT3_info:
             # print('SFP port3 Test fail, speed detect failed, error code 21003')
             with open(self.logname, 'a+') as f:
                 f.write("SFP port3 Test fail, speed detect failed, error code 21003\r")
-        elif (not('Speed: 10000Mb/s'.encode() in SFPPORT4_info) or not('Link detected: yes'.encode() in SFPPORT4_info)):
+        elif 'Speed: 10000Mb/s'.encode() not in SFPPORT4_info or 'Link detected: yes'.encode() not in SFPPORT4_info:
             # print('SFP port4 Test fail, speed detect failed, error code 21004')
             with open(self.logname, 'a+') as f:
                 f.write("SFP port4 Test fail, speed detect failed, error code 21004\r")

@@ -2,7 +2,6 @@ import paramiko
 import re
 
 
-
 class Memory_test:
     def __init__(self, logname, hostname, port, username, password):
         self.logname = logname

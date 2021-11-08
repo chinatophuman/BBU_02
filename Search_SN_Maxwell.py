@@ -1,6 +1,5 @@
 # Search SN, if the sn existed in machistory table, then return the 1st row number
 import pymysql
-
 # Function description: deal with the scanned SN, to decide from which table to fetch MAC address
 # There are two tables: macinfo, machistory
 # If the SN was tested, fetch from machistory table
@@ -152,7 +151,6 @@ class fetch_MAC:
                 passwd=self.password,
                 database=self.database)
             mycursor = mydb.cursor()
-
 
             # get all the rowcount of this sn
             mycursor.execute(query01)

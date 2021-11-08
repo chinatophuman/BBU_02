@@ -127,7 +127,8 @@ class Frame(wx.Frame):
     #     # print(duration)
     #     global value2
     #     if duration > 0.04:
-    #         warning_message = wx.MessageDialog(None, "please do not input manually", "warning", wx.OK | wx.ICON_INFORMATION)
+    #         warning_message = wx.MessageDialog(None, "please do not input manually", "warning", wx.OK |
+    #         wx.ICON_INFORMATION)
     #         value2 = ''
     #         self.m_serial.Clear()
     #         if warning_message.ShowModal() == wx.ID_OK:
